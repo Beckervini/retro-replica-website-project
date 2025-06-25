@@ -6,12 +6,14 @@ import { AnimationManager } from './js/animations.js';
 import { Utils } from './js/utils.js';
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Inicializando portfolio...');
+    
     // Inicializa todos os módulos
     const navigation = new NavigationManager();
     const mobileMenu = new MobileMenuManager();
     const animations = new AnimationManager();
 
-    // Handle window resize com debounce
+    // Handle window resize com debounce  
     const handleResize = Utils.debounce(() => {
         if (window.innerWidth > 1024) {
             mobileMenu.closeMenu();
@@ -20,29 +22,51 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 250);
 
     window.addEventListener('resize', handleResize);
-
-    // Remove qualquer CSS que possa estar causando snap
+    
+    // Forçar estilos para garantir funcionamento
     const style = document.createElement('style');
-    style.textContent = `
-        html {
-            scroll-behavior: auto !important;
+    style.innerHTML = `
+        body {
+            padding-top: 70px !important;
         }
         
-        body {
-            overflow-x: hidden;
-            overflow-y: auto !important;
+        .fixed-header {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 2000 !important;
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px) !important;
+        }
+        
+        .sidebar {
+            position: fixed !important;
+            top: 70px !important;
+            height: calc(100vh - 70px) !important;
         }
         
         .main-content {
-            scroll-snap-type: none !important;
+            margin-left: 280px !important;
         }
         
-        .section {
-            scroll-snap-align: none !important;
+        @media (max-width: 1024px) {
+            .main-content {
+                margin-left: 0 !important;
+            }
+            
+            .sidebar {
+                transform: translateX(-100%) !important;
+            }
+            
+            .sidebar.active {
+                transform: translateX(0) !important;
+            }
         }
     `;
     document.head.appendChild(style);
 
-    console.log('Portfolio com scroll livre carregado com sucesso!');
-    console.log('Módulos separados inicializados');
+    console.log('Portfolio carregado com sucesso!');
+    console.log('Cabeçalho fixo ativo');
+    console.log('Navegação lateral estilizada');
 });
