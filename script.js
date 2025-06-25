@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
         spans[2].style.transform = 'none';
     }
 
-    // Enhanced scroll-based navigation for continuous scrolling
+    // Natural scroll-based navigation - only updates active link
     function updateActiveSection() {
-        const scrollPosition = window.scrollY + window.innerHeight / 2;
+        const scrollPosition = window.scrollY + window.innerHeight / 3;
         
         sections.forEach((section, index) => {
             const sectionTop = section.offsetTop;
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scroll to section when clicking nav links
+    // Smooth scroll to section when clicking nav links (only when clicked)
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Listen for scroll events to update active navigation
+    // Listen for scroll events to update active navigation (throttled for performance)
     let scrollTimeout;
     window.addEventListener('scroll', function() {
         clearTimeout(scrollTimeout);
@@ -262,50 +262,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize button enhancements
     enhanceButtons();
 
-    // Keyboard navigation support
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-            e.preventDefault();
-            scrollToNextSection();
-        } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-            e.preventDefault();
-            scrollToPreviousSection();
-        }
-    });
-
-    function scrollToNextSection() {
-        const currentSection = getCurrentSection();
-        const nextSection = currentSection.nextElementSibling;
-        
-        if (nextSection && nextSection.classList.contains('section')) {
-            nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }
-
-    function scrollToPreviousSection() {
-        const currentSection = getCurrentSection();
-        const previousSection = currentSection.previousElementSibling;
-        
-        if (previousSection && previousSection.classList.contains('section')) {
-            previousSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }
-
-    function getCurrentSection() {
-        const scrollPosition = window.scrollY + window.innerHeight / 2;
-        
-        for (let section of sections) {
-            const sectionTop = section.offsetTop;
-            const sectionBottom = sectionTop + section.offsetHeight;
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                return section;
-            }
-        }
-        
-        return sections[0]; // Return first section as fallback
-    }
-
     // Performance optimization: Debounce resize events
     function debounce(func, wait) {
         let timeout;
@@ -334,7 +290,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', handleResize);
 
     // Console log for debugging
-    console.log('Enhanced portfolio website loaded successfully!');
-    console.log('Continuous scroll and enhanced hover effects enabled');
-    console.log('Current active section:', document.querySelector('.nav-link.active')?.getAttribute('href') || 'none');
+    console.log('Natural scroll portfolio website loaded successfully!');
+    console.log('Smooth animations enabled without forced scroll snapping');
 });
