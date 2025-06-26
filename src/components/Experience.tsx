@@ -4,16 +4,22 @@ import React from 'react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'Desenvolvedor Frontend',
-      company: 'Empresa Tech',
+      title: 'Desenvolvedor Fullstack',
+      company: 'Projetos Pessoais',
       period: '2023 - Presente',
-      description: 'Desenvolvimento de interfaces modernas utilizando React, TypeScript e Tailwind CSS.',
+      description: 'Desenvolvimento de aplicações completas utilizando tecnologias como Java, Spring Boot, .NET Core e bancos de dados relacionais.',
     },
     {
-      title: 'Desenvolvedor Web Junior',
-      company: 'StartUp Digital',
+      title: 'Desenvolvedor Backend',
+      company: 'Projetos Acadêmicos',
       period: '2022 - 2023',
-      description: 'Criação de websites responsivos e aplicações web com foco em experiência do usuário.',
+      description: 'Criação de APIs e sistemas backend com foco em arquitetura de software e boas práticas de desenvolvimento.',
+    },
+    {
+      title: 'Desenvolvedor Web',
+      company: 'Freelancer',
+      period: '2021 - 2022',
+      description: 'Desenvolvimento de websites e aplicações web utilizando tecnologias modernas com foco na experiência do usuário.',
     },
   ];
 

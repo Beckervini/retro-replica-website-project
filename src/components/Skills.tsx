@@ -3,12 +3,18 @@ import React from 'react';
 
 const Skills = () => {
   const skills = [
-    { name: 'React', level: 90 },
-    { name: 'TypeScript', level: 85 },
-    { name: 'JavaScript', level: 95 },
-    { name: 'HTML/CSS', level: 90 },
-    { name: 'Tailwind CSS', level: 85 },
-    { name: 'Git', level: 80 },
+    { name: 'Java', category: 'Backend', level: 'Avançado' },
+    { name: 'Spring Boot', category: 'Framework', level: 'Avançado' },
+    { name: '.NET Core', category: 'Backend', level: 'Intermediário' },
+    { name: 'Python', category: 'Backend', level: 'Intermediário' },
+    { name: 'SQL Server', category: 'Database', level: 'Avançado' },
+    { name: 'PostgreSQL', category: 'Database', level: 'Intermediário' },
+    { name: 'Microsoft Azure', category: 'Cloud', level: 'Intermediário' },
+    { name: 'RabbitMQ', category: 'Messaging', level: 'Intermediário' },
+    { name: 'JWT', category: 'Security', level: 'Avançado' },
+    { name: 'HTML/CSS', category: 'Frontend', level: 'Intermediário' },
+    { name: 'Git', category: 'Tools', level: 'Avançado' },
+    { name: 'Entity Framework', category: 'ORM', level: 'Avançado' },
   ];
 
   return (
@@ -20,19 +26,18 @@ const Skills = () => {
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full mt-2"></div>
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
             <div key={index} className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/50">
-              <div className="flex justify-between items-center mb-3">
-                <span className="font-semibold text-slate-700">{skill.name}</span>
-                <span className="text-sm text-slate-600">{skill.level}%</span>
-              </div>
-              <div className="w-full bg-slate-200 rounded-full h-2">
-                <div 
-                  className="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full transition-all duration-1000"
-                  style={{ width: `${skill.level}%` }}
-                ></div>
-              </div>
+              <h3 className="font-bold text-slate-700 text-lg mb-2">{skill.name}</h3>
+              <p className="text-blue-600 font-medium mb-2">{skill.category}</p>
+              <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+                skill.level === 'Avançado' 
+                  ? 'bg-green-100 text-green-700' 
+                  : 'bg-yellow-100 text-yellow-700'
+              }`}>
+                {skill.level}
+              </span>
             </div>
           ))}
         </div>
