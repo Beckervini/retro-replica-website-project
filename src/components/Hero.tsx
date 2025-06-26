@@ -10,11 +10,11 @@ const Hero = () => {
           Vinícius Becker
         </h1>
         <p className="text-xl lg:text-2xl text-slate-600 font-medium mb-6">
-          Desenvolvedor Frontend
+          Desenvolvedor com ♥ muito café
         </p>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          Apaixonado por criar experiências digitais excepcionais através de código limpo, 
-          design responsivo e tecnologias modernas.
+          Apaixonado por criar soluções tecnológicas através de código limpo, 
+          arquiteturas robustas e tecnologias modernas.
         </p>
       </div>
     </section>

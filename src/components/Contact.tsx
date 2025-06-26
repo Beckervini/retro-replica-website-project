@@ -15,8 +15,7 @@ const Contact = () => {
         
         <div className="bg-white/80 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/50">
           <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-            Estou sempre aberto a novas oportunidades e projetos interessantes. 
-            Vamos criar algo incrível juntos!
+            Estou sempre aberto a novas oportunidades e projetos interessantes. Vamos criar algo incrível juntos!
           </p>
           
           <a
