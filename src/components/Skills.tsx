@@ -28,13 +28,13 @@ const Skills = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill, index) => (
-            <div key={index} className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/50">
+            <div key={index} className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/50 hover:shadow-xl transition-shadow duration-300">
               <h3 className="font-bold text-slate-700 text-lg mb-2">{skill.name}</h3>
-              <p className="text-blue-600 font-medium mb-2">{skill.category}</p>
+              <p className="text-blue-600 font-medium mb-3">{skill.category}</p>
               <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
                 skill.level === 'Avançado' 
-                  ? 'bg-green-100 text-green-700' 
-                  : 'bg-yellow-100 text-yellow-700'
+                  ? 'bg-green-100 text-green-700 border border-green-200' 
+                  : 'bg-yellow-100 text-yellow-700 border border-yellow-200'
               }`}>
                 {skill.level}
               </span>
