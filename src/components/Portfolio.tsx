@@ -18,7 +18,7 @@ const Portfolio = () => {
       <Header />
       <div className="flex">
         <Sidebar />
-        <main className="ml-0 lg:ml-280 flex-1 min-h-screen w-full">
+        <main className="ml-0 lg:ml-80 flex-1 min-h-screen w-full">
           <Hero />
           <About />
           <Objectives />
