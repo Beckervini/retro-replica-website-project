@@ -23,9 +23,9 @@ const Contact = () => {
             href="https://www.linkedin.com/in/vinicius-becker-a2aba7233"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border-0"
           >
-            <Linkedin size={24} />
+            <Linkedin size={24} className="text-white" />
             Conectar no LinkedIn
           </a>
         </div>

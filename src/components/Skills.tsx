@@ -3,18 +3,18 @@ import React from 'react';
 
 const Skills = () => {
   const skills = [
-    { name: 'Java', category: 'Backend', level: 'Avançado' },
-    { name: 'Spring Boot', category: 'Framework', level: 'Avançado' },
-    { name: '.NET Core', category: 'Backend', level: 'Intermediário' },
-    { name: 'Python', category: 'Backend', level: 'Intermediário' },
-    { name: 'SQL Server', category: 'Database', level: 'Avançado' },
-    { name: 'PostgreSQL', category: 'Database', level: 'Intermediário' },
-    { name: 'Microsoft Azure', category: 'Cloud', level: 'Intermediário' },
-    { name: 'RabbitMQ', category: 'Messaging', level: 'Intermediário' },
-    { name: 'JWT', category: 'Security', level: 'Avançado' },
-    { name: 'HTML/CSS', category: 'Frontend', level: 'Intermediário' },
-    { name: 'Git', category: 'Tools', level: 'Avançado' },
-    { name: 'Entity Framework', category: 'ORM', level: 'Avançado' },
+    { name: 'HTML5', category: 'Markup', level: 'Avançado' },
+    { name: 'CSS3', category: 'Styling', level: 'Avançado' },
+    { name: 'JavaScript', category: 'Programming', level: 'Avançado' },
+    { name: 'React', category: 'Framework', level: 'Intermediário' },
+    { name: 'TypeScript', category: 'Programming', level: 'Intermediário' },
+    { name: 'Git', category: 'Version Control', level: 'Avançado' },
+    { name: 'Tailwind CSS', category: 'Styling', level: 'Intermediário' },
+    { name: 'Responsive Design', category: 'Design', level: 'Avançado' },
+    { name: 'Node.js', category: 'Backend', level: 'Intermediário' },
+    { name: 'Vite', category: 'Build Tools', level: 'Intermediário' },
+    { name: 'API Integration', category: 'Development', level: 'Intermediário' },
+    { name: 'Frontend Optimization', category: 'Performance', level: 'Intermediário' },
   ];
 
   return (
